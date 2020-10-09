@@ -12,4 +12,13 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new
   end
 
+  def create
+    @restaurant = Restaurant.new(restaurant_params)
+  end
+
+  def destroy
+    @restaurant.destroy
+    redirect_to articles_url, notice: 'Restaurant was successfully destroyed.'
+  end
+
 end
